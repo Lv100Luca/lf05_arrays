@@ -28,15 +28,15 @@ und dir dann den nächsten vornimmst. Zwischendurch kannst du immer wieder die G
 Um das Spielfeld zu initialisieren und lebende Zellen in die Petrischale setzen zu können, müssen zunächst folgende Methoden
 implementiert werden:
 - `public void initializeBoard(int number)` initialisiert die Petrischale mit der ihr übergebenen Anzahl an lebenden Zellen,
-die zufallsbestimmt in die Petrischale gesetzt werden. Sie wirft eine RuntimeException, wenn die übergebene Anzahl nicht im
-Intervall von 1 bis 100 liegt. Die Petrischale ist zwar nur 10 x 10 Felder groß, für die späteren Überprüfungen ist es 
+die zufallsbestimmt in die Petrischale gesetzt werden. Sie wirft eine RuntimeException mit der Message "Die Anzahl der Zellen muss im Intervall 1 bis 100 liegen!", wenn die übergebene Anzahl nicht im
+Intervall von 0 bis 100 liegt. Die Petrischale ist zwar nur 10 x 10 Felder groß, für die späteren Überprüfungen ist es 
 allerdings sehr nützlich, die Außenränder um jeweils eine Reihe oben und unten und um jeweils eine weitere Spalte rechts 
 und links zu erweitern, so dass die Petrischale eine Größe von 12x12 Feldern hat. Die eigentliche Petrischale befindet sich
 dann auf den Koordianten 1, 1 bis 10, 10.  
 - `public char[][] getBoard()` gibt die Petrischale im Format 10 x 10 Felder zurück.
 - `public boolean setAliveCell(int row, int col)` setzt an die Stelle row, col eine lebende Zelle in die Petrischale. Die
 Methode gibt true zurück, wenn das Setzen erfolgreich war, d.h. die Zelle an den Koordinaten row, col tot war und durch den
-Aufruf auf lebend gesetzt werden konnte. Lebt die Zelle an den Koordinaten, wird false zurückgegeben.
+Aufruf auf lebend gesetzt werden konnte. Lebt die Zelle an den Koordinaten, wird false zurückgegeben. Row und Col sind dabei im Wertebereich 0 bis 9.
 - `public int getAliveCell()` gibt die Anzahl der lebenden Zellen im Board zurück
 - `public char getCellStatus(int row, int col)` gibt den Status der Zelle an der Stelle row, col in der Petrischale zurück,
 also 'O' für eine lebende Zelle oder ' ' für eine tote Zelle.
